@@ -1,0 +1,245 @@
+{
+	"objects": [
+		{
+			"application": "Local|cucumber-junit5-rest-api",
+			"name": "master",
+			"kind": "ApplicationVersion"
+		},
+		{
+			"applicationVersions": [
+				"Local|cucumber-junit5-rest-api/master"
+			],
+			"isReplaceApplicationVersionOnChangeNotification": false,
+			"markAsDonePhaseName": "",
+			"runOnCreation": false,
+			"version": "master",
+			"name": "cucumber-junit5-rest-api",
+			"kind": "Release",
+			"ownerParties": [
+				"ofer.yaniv@broadcom.okta.com",
+				"jenkins"
+			]
+		},
+		{
+			"release": "cucumber-junit5-rest-api/master",
+			"environments": [
+				"DEV"
+			],
+			"approvalGate": "AUTOMATIC",
+			"skipTasksWithUnchangedApplications": false,
+			"isApprovalRequired": false,
+			"name": "DEV",
+			"kind": "Phase"
+		},
+		{
+			"release": "cucumber-junit5-rest-api/master",
+			"environments": [
+				"TEST"
+			],
+			"previousPhase": "DEV",
+			"approvalGate": "AUTOMATIC",
+			"skipTasksWithUnchangedApplications": false,
+			"isApprovalRequired": false,
+			"name": "TEST",
+			"kind": "Phase"
+		},
+		{
+			"release": "cucumber-junit5-rest-api/master",
+			"environments": [
+				"STAGE"
+			],
+			"previousPhase": "TEST",
+			"approvalGate": "MANUAL",
+			"skipTasksWithUnchangedApplications": false,
+			"isApprovalRequired": false,
+			"name": "STAGE",
+			"kind": "Phase"
+		},
+		{
+			"release": "cucumber-junit5-rest-api/master",
+			"environments": [
+				"PROD"
+			],
+			"previousPhase": "STAGE",
+			"approvalGate": "MANUAL",
+			"skipTasksWithUnchangedApplications": false,
+			"isApprovalRequired": false,
+			"name": "PROD",
+			"kind": "Phase"
+		},
+		{
+			"phase": "cucumber-junit5-rest-api/master/DEV",
+			"isDisabled": false,
+			"applicationVersionBuilds": [
+				{
+					"applicationVersion": "Local|cucumber-junit5-rest-api/master",
+					"buildNumber": "%cucumber-junit5-rest-api.last_successful_change%"
+				}
+			],
+			"isOnFailurePhaseEnabled": true,
+			"isSkipTaskOnFailure": false,
+			"isIgnoreTaskFailure": false,
+			"name": "Cucumber Junit5 REST API",
+			"kind": "Task",
+			"plugin": "ADAPTIVE TESTING/1.1.1|4",
+			"parameters": {
+				"changeId": "%cucumber-junit5-rest-api.last_successful_change%",
+				"runOnlySubset": "false"
+			},
+			"type": "Run Adaptive Testing",
+			"tags": [
+				"cucumber-junit5-rest-api"
+			]
+		},
+		{
+			"phase": "cucumber-junit5-rest-api/master/TEST",
+			"isDisabled": false,
+			"applicationVersionBuilds": [
+				{
+					"applicationVersion": "Local|cucumber-junit5-rest-api/master",
+					"buildNumber": "%cucumber-junit5-rest-api.last_successful_change%"
+				}
+			],
+			"isOnFailurePhaseEnabled": true,
+			"isSkipTaskOnFailure": false,
+			"isIgnoreTaskFailure": false,
+			"name": "Cucumber Junit5 REST API",
+			"kind": "Task",
+			"plugin": "ADAPTIVE TESTING/1.1.1|4",
+			"parameters": {
+				"changeId": "%cucumber-junit5-rest-api.last_successful_change%",
+				"runOnlySubset": "false"
+			},
+			"type": "Run Adaptive Testing",
+			"tags": [
+				"cucumber-junit5-rest-api"
+			]
+		},
+		{
+			"phase": "cucumber-junit5-rest-api/master/TEST",
+			"previousTasks": [
+				"Cucumber Junit5 REST API"
+			],
+			"isDisabled": false,
+			"applicationVersionBuilds": [
+				{
+					"applicationVersion": "Local|cucumber-junit5-rest-api/master",
+					"buildNumber": "%cucumber-junit5-rest-api.last_successful_change%"
+				}
+			],
+			"isOnFailurePhaseEnabled": false,
+			"isSkipTaskOnFailure": false,
+			"isIgnoreTaskFailure": true,
+			"name": "Blazemeter Selenium",
+			"kind": "Task",
+			"plugin": "ADAPTIVE TESTING/1.1.1|4",
+			"parameters": {
+				"runOnlySubset": "false"
+			},
+			"type": "Run Adaptive Testing",
+			"tags": [
+				"Vodafone_DEMO"
+			]
+		},
+		{
+			"phase": "cucumber-junit5-rest-api/master/STAGE",
+			"isDisabled": false,
+			"applicationVersionBuilds": [
+				{
+					"applicationVersion": "Local|cucumber-junit5-rest-api/master",
+					"buildNumber": "%cucumber-junit5-rest-api.last_successful_change%"
+				}
+			],
+			"isOnFailurePhaseEnabled": true,
+			"isSkipTaskOnFailure": false,
+			"isIgnoreTaskFailure": false,
+			"name": "Cucumber Junit5 REST API",
+			"kind": "Task",
+			"plugin": "ADAPTIVE TESTING/1.1.1|4",
+			"parameters": {
+				"changeId": "%cucumber-junit5-rest-api.last_successful_change%",
+				"runOnlySubset": "false"
+			},
+			"type": "Run Adaptive Testing",
+			"tags": [
+				"cucumber-junit5-rest-api"
+			]
+		},
+		{
+			"phase": "cucumber-junit5-rest-api/master/STAGE",
+			"previousTasks": [
+				"Cucumber Junit5 REST API"
+			],
+			"isDisabled": false,
+			"applicationVersionBuilds": [
+				{
+					"applicationVersion": "Local|cucumber-junit5-rest-api/master",
+					"buildNumber": "%cucumber-junit5-rest-api.last_successful_change%"
+				}
+			],
+			"isOnFailurePhaseEnabled": false,
+			"isSkipTaskOnFailure": false,
+			"isIgnoreTaskFailure": true,
+			"name": "Blazemeter Selenium",
+			"kind": "Task",
+			"plugin": "ADAPTIVE TESTING/1.1.1|4",
+			"parameters": {
+				"runOnlySubset": "false"
+			},
+			"type": "Run Adaptive Testing",
+			"tags": [
+				"Vodafone_DEMO"
+			]
+		},
+		{
+			"phase": "cucumber-junit5-rest-api/master/PROD",
+			"isDisabled": false,
+			"applicationVersionBuilds": [
+				{
+					"applicationVersion": "Local|cucumber-junit5-rest-api/master",
+					"buildNumber": "%cucumber-junit5-rest-api.last_successful_change%"
+				}
+			],
+			"isOnFailurePhaseEnabled": true,
+			"isSkipTaskOnFailure": false,
+			"isIgnoreTaskFailure": false,
+			"name": "Cucumber Junit5 REST API",
+			"kind": "Task",
+			"plugin": "ADAPTIVE TESTING/1.1.1|4",
+			"parameters": {
+				"changeId": "%cucumber-junit5-rest-api.last_successful_change%",
+				"runOnlySubset": "false"
+			},
+			"type": "Run Adaptive Testing",
+			"tags": [
+				"cucumber-junit5-rest-api"
+			]
+		},
+		{
+			"phase": "cucumber-junit5-rest-api/master/PROD",
+			"previousTasks": [
+				"Cucumber Junit5 REST API"
+			],
+			"isDisabled": false,
+			"applicationVersionBuilds": [
+				{
+					"applicationVersion": "Local|cucumber-junit5-rest-api/master",
+					"buildNumber": "%cucumber-junit5-rest-api.last_successful_change%"
+				}
+			],
+			"isOnFailurePhaseEnabled": false,
+			"isSkipTaskOnFailure": false,
+			"isIgnoreTaskFailure": true,
+			"name": "Blazemeter Selenium",
+			"kind": "Task",
+			"plugin": "ADAPTIVE TESTING/1.1.1|4",
+			"parameters": {
+				"runOnlySubset": "false"
+			},
+			"type": "Run Adaptive Testing",
+			"tags": [
+				"Vodafone_DEMO"
+			]
+		}
+	]
+}
